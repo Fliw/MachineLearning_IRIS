@@ -25,7 +25,7 @@ Disini Kita Menggunakan Data Yg Random, Untuk Panjang Serta Lebar Bunga, yang Na
 ## Instalasi
 Kloning Repositori Ini Secara Lokal Menggunakan git:
 
-    $ git clone https://github.com/RubixML/Iris
+    $ git clone https://github.com/Fliw/MachineLearning_IRIS
 Install Dependensi Pakai Composer :
 
     $ composer install
