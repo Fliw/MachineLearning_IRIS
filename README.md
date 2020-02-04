@@ -1,5 +1,6 @@
 #Klasifikator Jenis Bunga IRIS#
-Ada 50 Sampel Untuk Masing Masing Jenis Bunga Iris, Yaitu : Iris-Setosa,Iris-Virginica dan iris-versicolor.
+Ada 50 Sampel Untuk Masing Masing Jenis Bunga Iris, 
+Yaitu : Iris-Setosa,Iris-Virginica dan iris-versicolor.
 Setiap Sampel Berisi Data Tentang Panjang Serta Lebar Kelopak Serta Jenis Bunga. Disini Kita Menggunakan Data Yg Random, Untuk Panjang Serta Lebar Bunga, yang Nantinya Akan Di Klasifikasikan Oleh Learner.
 #Tentang Klasifikator
 Kesulitan : Mudah,
