@@ -23,8 +23,6 @@ Disini Kita Menggunakan Data Yg Random, Untuk Panjang Serta Lebar Bunga, yang Na
  - Composer
 
 ## Instalasi
-
-=======
 #Klasifikator Jenis Bunga IRIS#
 Ada 50 Sampel Untuk Masing Masing Jenis Bunga Iris, 
 Yaitu : Iris-Setosa,Iris-Virginica dan iris-versicolor.
