@@ -1,0 +1,13 @@
+language: php
+
+php:
+    - '7.2'
+    - '7.3'
+
+before_install:
+    - yes no | pecl install -f redis
+    - pecl install -f igbinary
+    - pecl install -f svm
+
+script:
+    - composer build

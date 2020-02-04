@@ -1,0 +1,27 @@
+{
+    "name": "rubix/iris",
+    "type": "project",
+    "description": "An introduction to machine learning in Rubix ML using the famous Iris dataset and the K Nearest Neighbors classifier.",
+    "homepage": "https://github.com/RubixML/Iris",
+    "license": "MIT",
+    "keywords": [
+        "php", "machine", "learning", "data", "science", "mining", "predictive", "modeling",
+        "ai", "ml", "classification", "k-nearest-neighbors", "iris", "dataset", "tutorial"
+    ],
+    "authors": [
+        {
+            "name": "Andrew DalPino",
+            "email": "me@andrewdalpino.com",
+            "homepage": "https://andrewdalpino.com",
+            "role": "Lead Engineer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "rubix/ml": "^0.0.19-beta"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

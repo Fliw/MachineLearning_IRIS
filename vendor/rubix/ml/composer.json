@@ -1,0 +1,88 @@
+{
+    "name": "rubix/ml",
+    "type": "library",
+    "description": "A high-level machine learning and deep learning library for the PHP language.",
+    "homepage": "https://rubixml.com",
+    "license": "MIT",
+    "keywords": [
+        "php", "machine-learning", "data-science", "data-mining", "predictive-modeling", "classification",
+        "regression", "clustering", "anomaly-detection", "neural-network", "manifold-learning",
+        "dimensionality-reduction", "artificial-intelligence", "ai", "cross-validation", "feature-extraction",
+        "deep-learning", "rubix", "ml", "analytics", "naive-bayes", "k-means", "k-nearest-neighbors"
+    ],
+    "authors": [
+        {
+            "name": "Andrew DalPino",
+            "email": "me@andrewdalpino.com",
+            "homepage": "https://andrewdalpino.com",
+            "role": "Lead Engineer"
+        },
+        {
+            "name": "Core Team",
+            "homepage": "https://github.com/orgs/RubixML/teams/core"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/RubixML/RubixML/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "amphp/parallel": "^1.2",
+        "psr/log": "^1.1",
+        "rubix/tensor": "^2.0.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "2.16.*",
+        "phpbench/phpbench": "0.16.*",
+        "phpstan/phpstan": "0.12.*",
+        "phpstan/phpstan-phpunit": "0.12.*",
+        "phpunit/phpunit": "8.5.*"
+    },
+    "suggest": {
+        "ext-tensor": "For fast Matrix/Vector computing",
+        "ext-svm": "For Support Vector Machine engine (libsvm)",
+        "ext-gd": "For image vectorization",
+        "ext-redis": "To persist models to a Redis DB",
+        "ext-igbinary": "For binary serialization of persistables"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rubix\\ML\\": "src/"
+        },
+        "files": [
+            "src/constants.php",
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rubix\\ML\\Tests\\": "tests/",
+            "Rubix\\ML\\Benchmarks\\": "benchmarks/"
+        }
+    },
+    "scripts": {
+        "build": [
+            "@composer install",
+            "@analyze",
+            "@test",
+            "@check"
+        ],
+        "analyze": "phpstan analyse -c phpstan.neon",
+        "benchmark": "phpbench run --report=env --report=aggregate",
+        "check": "php-cs-fixer fix --config=.php_cs.dist -v --dry-run --using-cache=no",
+        "fix": "php-cs-fixer fix --config=.php_cs.dist",
+        "test": "phpunit"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "process-timeout": 3000
+    },
+    "support": {
+        "email": "contact@rubixml.com",
+        "issues": "https://github.com/RubixML/RubixML/issues",
+        "source": "https://github.com/RubixML/RubixML",
+        "docs": "https://docs.rubixml.com/en/latest"
+    }
+}

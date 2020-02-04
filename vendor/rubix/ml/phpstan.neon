@@ -1,0 +1,13 @@
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+
+parameters:
+    level: 8
+    paths:
+        - 'src'
+        - 'tests'
+        - 'benchmarks'
+    excludes_analyse:
+        - src/Graph/Trees/BallTree.php
+        - src/Graph/Trees/KDTree.php

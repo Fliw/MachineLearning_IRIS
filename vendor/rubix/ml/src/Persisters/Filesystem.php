@@ -1,0 +1,129 @@
+<?php
+
+namespace Rubix\ML\Persisters;
+
+use Rubix\ML\Persistable;
+use Rubix\ML\Persisters\Serializers\Native;
+use Rubix\ML\Persisters\Serializers\Serializer;
+use InvalidArgumentException;
+use RuntimeException;
+
+/**
+ * Filesystem
+ *
+ * Filesystems are local or remote storage drives that are organized by files
+ * and folders. The filesystem persister serializes models to a file at a
+ * user-specified path.
+ *
+ * @category    Machine Learning
+ * @package     Rubix/ML
+ * @author      Andrew DalPino
+ */
+class Filesystem implements Persister
+{
+    /**
+     * The extension to give files created as part of a persistable's save history.
+     *
+     * @var string
+     */
+    public const HISTORY_EXT = '.old';
+
+    /**
+     * The path to the model file on the filesystem.
+     *
+     * @var string
+     */
+    protected $path;
+
+    /**
+     * Should we keep a history of past saves?
+     *
+     * @var bool
+     */
+    protected $history;
+
+    /**
+     * The serializer used to convert to and from serial format.
+     *
+     * @var \Rubix\ML\Persisters\Serializers\Serializer
+     */
+    protected $serializer;
+
+    /**
+     * @param string $path
+     * @param bool $history
+     * @param \Rubix\ML\Persisters\Serializers\Serializer|null $serializer
+     * @throws \InvalidArgumentException
+     */
+    public function __construct(string $path, bool $history = false, ?Serializer $serializer = null)
+    {
+        if (!is_writable(dirname($path))) {
+            throw new InvalidArgumentException('Folder does not exist or'
+                . ' is not writable, check path and permissions.');
+        }
+
+        $this->path = $path;
+        $this->history = $history;
+        $this->serializer = $serializer ?? new Native();
+    }
+
+    /**
+     * Save the persistable model.
+     *
+     * @param \Rubix\ML\Persistable $persistable
+     * @throws \RuntimeException
+     */
+    public function save(Persistable $persistable) : void
+    {
+        if ($this->history and is_file($this->path)) {
+            $filename = $this->path . '.' . (string) time() . self::HISTORY_EXT;
+
+            if (!rename($this->path, $filename)) {
+                throw new RuntimeException('Failed to rename history'
+                 . ' file, check path and permissions.');
+            }
+        }
+
+        if (is_file($this->path) and !is_writable($this->path)) {
+            throw new RuntimeException("File $this->path is"
+                . ' not writable.');
+        }
+
+        $data = $this->serializer->serialize($persistable);
+
+        if (!file_put_contents($this->path, $data, LOCK_EX)) {
+            throw new RuntimeException('Failed to save file to'
+                . ' filesystem, check path and permissions.');
+        }
+    }
+
+    /**
+     * Load the last model that was saved.
+     *
+     * @throws \RuntimeException
+     * @return \Rubix\ML\Persistable
+     */
+    public function load() : Persistable
+    {
+        if (!is_readable($this->path)) {
+            throw new RuntimeException("File $this->path does not"
+                . ' exist or is a folder, check path and permissions.');
+        }
+            
+        $data = file_get_contents($this->path) ?: '';
+
+        if (empty($data)) {
+            throw new RuntimeException("File $this->path does not"
+                . ' contain any data.');
+        }
+
+        $persistable = $this->serializer->unserialize($data);
+
+        if (!$persistable instanceof Persistable) {
+            throw new RuntimeException('Persistable could not be'
+                . ' reconstituted.');
+        }
+
+        return $persistable;
+    }
+}
