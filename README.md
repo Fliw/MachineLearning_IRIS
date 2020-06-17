@@ -1,3 +1,10 @@
+![issues](https://img.shields.io/github/issues/Fliw/MachineLearning_IRIS)
+![forks](https://img.shields.io/github/forks/Fliw/MachineLearning_IRIS)
+![stars](https://img.shields.io/github/stars/Fliw/MachineLearning_IRIS)
+![license](https://img.shields.io/github/license/Fliw/MachineLearning_IRIS?label=License)
+![code-editor](https://img.shields.io/badge/Code%20editor-VSCode-blue?logo=visual-studio-code)
+![lang](https://img.shields.io/badge/Lang-PHP-blue?logo=php)
+![author](https://img.shields.io/badge/Author-Fliw-red)
 # :fallen_leaf: Klasifikator Jenis Bunga IRIS :fallen_leaf:
 
 ![Jenis Bunga Iris](https://raw.githubusercontent.com/RubixML/Iris/master/docs/images/iris-dataset-3d-plot.png)
