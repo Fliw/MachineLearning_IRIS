@@ -1,57 +1,94 @@
-# :fallen_leaf: Klasifikator Jenis Bunga IRIS :fallen_leaf:
-![issues](https://img.shields.io/github/issues/Fliw/MachineLearning_IRIS)
-![forks](https://img.shields.io/github/forks/Fliw/MachineLearning_IRIS)
-![stars](https://img.shields.io/github/stars/Fliw/MachineLearning_IRIS)
-![license](https://img.shields.io/github/license/Fliw/MachineLearning_IRIS?label=License)
-![code-editor](https://img.shields.io/badge/Code%20editor-VSCode-blue?logo=visual-studio-code)
-![lang](https://img.shields.io/badge/Lang-PHP-blue?logo=php)
-![author](https://img.shields.io/badge/Author-Fliw-red)
-![Jenis Bunga Iris](https://raw.githubusercontent.com/RubixML/Iris/master/docs/images/iris-dataset-3d-plot.png)
 
-Ada 50 Sampel Untuk Masing Masing Jenis Bunga Iris, Yaitu:
+# 🌸 Klasifikator Jenis Bunga IRIS 🌸  
 
- - **Iris-Setosa**
- - **Iris-Virginica**
- - **Iris-Versicolor**
- 
-Setiap Sampel Berisi Data Tentang Panjang Serta Lebar Kelopak Serta Jenis Bunga.
-Disini Kita Menggunakan Data Yg Random, Untuk Panjang Serta Lebar Bunga, yang Nantinya Akan Di Klasifikasikan Oleh Learner.
+## 📖 Deskripsi Proyek  
 
-# Tentang Klasifikator
+Proyek ini menggunakan dataset IRIS untuk mengklasifikasikan jenis bunga berdasarkan panjang dan lebar kelopak serta mahkota bunga. Algoritma yang digunakan adalah **K-Nearest Neighbors (KNN)**, salah satu algoritma pembelajaran mesin yang sederhana dan efektif.  
 
- - **Kesulitan**: Mudah.
- - **Waktu Pelatihan**: Detik.
- - **Memori Yang Dibutuhkan**: Kurang Dari 1 GiB.
- 
+### Dataset IRIS  
 
-## Persyaratan
+Dataset ini mencakup 150 sampel, terbagi dalam tiga jenis bunga:  
+- **Iris-Setosa**  
+- **Iris-Versicolor**  
+- **Iris-Virginica**  
 
- - PHP 7.2 Atau Lebih Tinggi.
- - KNN Learner.
- - Composer
+Setiap sampel memiliki empat fitur utama:  
+1. Panjang kelopak (sepal length)  
+2. Lebar kelopak (sepal width)  
+3. Panjang mahkota bunga (petal length)  
+4. Lebar mahkota bunga (petal width)  
 
-## Instalasi
-Kloning Repositori Ini Secara Lokal Menggunakan git:
+Dataset ini telah banyak digunakan dalam pembelajaran mesin untuk eksperimen klasifikasi sederhana.  
 
-    $ git clone https://github.com/Fliw/MachineLearning_IRIS
-Install Dependensi Pakai Composer :
+---
 
-    $ composer install
+## 🚀 Fitur Utama  
 
-## Testing
+- **Pengklasifikasian Jenis Bunga**: Menggunakan data panjang dan lebar untuk memprediksi jenis bunga.  
+- **Implementasi Algoritma KNN**: Model berbasis tetangga terdekat yang mudah dipahami dan diterapkan.  
+- **Akurasi Tinggi**: Proses pelatihan dan prediksi dilakukan secara efisien dengan hasil yang andal.  
 
-Jalankan Command Berikut Di Terminal :
+---
 
-    $ php train.php
-lalu Klik Enter.
-Didapatkan Hasil Prediksi Jenis Bunga Serta Keakuratan Nilai Output.
-Terimakasih.
+## 📋 Spesifikasi Proyek  
 
--Fliw 
+- **Tingkat Kesulitan**: Mudah  
+- **Waktu Pelatihan**: < 1 Detik  
+- **Penggunaan Memori**: < 1 GiB  
 
-## References 
+---
 
-**www.Rubixml.com**
+## 🛠️ Persyaratan  
 
-**[https://php-ml.readthedocs.io/en/latest/machine-learning/classification/k-nearest-neighbors/](https://php-ml.readthedocs.io/en/latest/machine-learning/classification/k-nearest-neighbors/)**
+1. **PHP**  
+   - Versi 7.2 atau lebih tinggi.  
+2. **Composer**  
+   - Digunakan untuk instalasi library.  
+3. **Library Pembelajaran Mesin**  
+   - PHP-ML untuk algoritma KNN.  
 
+---
+
+## ⚙️ Instalasi  
+
+### 1. Kloning Repositori  
+
+Gunakan perintah berikut untuk menyalin proyek secara lokal:  
+
+```bash  
+git clone https://github.com/Fliw/MachineLearning_IRIS  
+cd MachineLearning_IRIS  
+```  
+
+### 2. Instal Dependensi  
+
+Jalankan perintah berikut untuk mengunduh library yang diperlukan:  
+
+```bash  
+composer install  
+```  
+
+---
+
+## 🧪 Pengujian  
+
+1. Jalankan file `train.php` dengan perintah berikut:  
+
+   ```bash  
+   php train.php  
+   ```  
+
+2. Hasil prediksi akan ditampilkan di terminal bersama tingkat akurasi model.  
+
+---
+
+## 📚 Referensi  
+
+1. [Rubix ML - Dataset IRIS](https://www.rubixml.com)  
+2. [PHP-ML Documentation - K-Nearest Neighbors](https://php-ml.readthedocs.io/en/latest/machine-learning/classification/k-nearest-neighbors/)  
+
+---
+
+## 🏆 Lisensi  
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).  
